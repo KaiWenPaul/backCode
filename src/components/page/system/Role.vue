@@ -147,7 +147,7 @@
             }
         },
         created() {
-            this.getData();
+            this.getData(1);
         },
         methods: {
             handleSizeChange(val) {
@@ -156,12 +156,12 @@
             // 分页导航
             handleCurrentChange(val) {
                 this.cur_page = val;
-                this.getData();
+                this.getData(this.cur_page);
             },
             // 获取列表数据
-            getData() {
+            getData(arr) {
                 var filter = {};
-                filter.pageNum  = this.cur_page;
+                filter.pageNum  = arr;
                 filter.pageSize =10;
                 this.$ajax.postu(urlA+'role/listRolePage', filter).then((res) => {
                     if (res.msg == "success") {
@@ -200,7 +200,7 @@
                         if (res.msg == "success") {
                         this.$message.success('添加成功');
                         this.editVisible = false;
-                        this.getData();
+                        this.getData(1);
                         } else {
                             this.$message({
                             message: res.msg,
@@ -217,7 +217,7 @@
                         if (res.msg == "success") {
                         this.$message.success('修改成功');
                         this.editVisible = false;
-                        this.getData();
+                        this.getData(1);
                         } else {
                             this.$message({
                             message: res.msg,
@@ -230,8 +230,9 @@
                
             },
             cancel(){
-               this.editVisible = false;
-               this.PermissionVisible = false;
+                this.editVisible = false;
+                this.PermissionVisible = false;
+                this.getData(1);
             },
             handleDelete(index, row) {
                 this.idx = row.id;
@@ -244,7 +245,7 @@
                     if (res.msg == "success") {
                        this.$message.success('删除成功');
                        this.delVisible = false;
-                       this.getData();
+                       this.getData(1);
                     } else {
                         this.$message({
                         message: res.msg,
@@ -285,7 +286,7 @@
                     if (res.msg == "success") {
                         this.$message.success('修改权限成功');
                         this.PermissionVisible = false;
-                        this.getData();
+                        this.getData(1);
                     } else {
                         this.$message({
                         message: res.msg,

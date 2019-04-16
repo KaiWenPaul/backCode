@@ -128,7 +128,7 @@
             }
         },
         created() {
-            this.getData();
+            this.getData(1);
             this.getRole();
         },
         methods: {
@@ -138,12 +138,12 @@
             // 分页导航
             handleCurrentChange(val) {
                 this.cur_page = val;
-                this.getData();
+                this.getData(this.cur_page);
             },
             // 获取列表数据
-            getData() {
+            getData(arr) {
                 var filter = {};
-                filter.pageNum  = this.cur_page;
+                filter.pageNum  = arr;
                 filter.pageSize =10;
                 this.$ajax.postu(urlA+'/account/listAccountInfoPage', filter).then((res) => {
                     if (res.msg == "success") {
@@ -203,7 +203,7 @@
                         if (res.msg == "success") {
                         this.$message.success('添加成功');
                         this.editVisible = false;
-                        this.getData();
+                        this.getData(1);
                         } else {
                             this.$message({
                             message: res.msg,
@@ -221,7 +221,7 @@
                         if (res.msg == "success") {
                         this.$message.success('修改成功');
                         this.editVisible = false;
-                        this.getData();
+                        this.getData(1);
                         } else {
                             this.$message({
                             message: res.msg,
@@ -238,13 +238,14 @@
               this.pwd_id = row.account_id;
               this.pwVisible = true;
               this.password='';
+              this.getData(1);
             },
             savePwd(){
               this.$ajax.postu(urlA+'account/updatePassword',{account_id:this.pwd_id,password:this.password}).then((res) => {
                     if (res.msg == "success") {
                        this.$message.success('修改成功');
                        this.pwVisible = false;
-                       this.getData();
+                       this.getData(1);
                     } else {
                         this.$message({
                         message: res.msg,
@@ -256,6 +257,7 @@
             cancel(){
                this.editVisible = false;
                this.pwVisible = false;
+                this.getData(1);
             },
             handleDelete(index, row) {
                 this.idx = row.account_id;
@@ -268,7 +270,7 @@
                     if (res.msg == "success") {
                        this.$message.success('删除成功');
                        this.delVisible = false;
-                       this.getData();
+                       this.getData(1);
                     } else {
                         this.$message({
                         message: res.msg,

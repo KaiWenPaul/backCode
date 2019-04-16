@@ -7,7 +7,7 @@
         </div>
         <div class="container">
             <div class="handle-box">
-              <el-input v-model="id" placeholder="输入活动编号" class="handle-input mr10"  @keyup.enter.native="getData"></el-input>
+              <el-input v-model="id" placeholder="输入活动编号" class="handle-input mr10"   @keyup.enter.native="getData(1)"></el-input>
                <!--<el-date-picker type="date" placeholder="请选择日期" v-model="form.date" value-format="yyyy-MM-dd"></el-date-picker>
               <el-select v-model="select_cate" placeholder="筛选省份" class="handle-select mr10">
                     <el-option key="1" label="广东省" value="广东省"></el-option>
@@ -255,6 +255,7 @@
             },
             cancel(){
                this.editVisible = false;
+                this.getData();
             },
             handleDelete(index, row) {
                 this.idx = row.id;

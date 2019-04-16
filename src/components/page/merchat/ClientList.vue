@@ -7,8 +7,8 @@
         </div>
         <div class="container">
             <div class="handle-box">
-              <el-input v-model="id	" placeholder="输入用户id" class="handle-input mr10"  @keyup.enter.native="getData"></el-input>
-              <el-input v-model="phone" placeholder="输入手机号" class="handle-input mr10"  @keyup.enter.native="getData"></el-input>
+              <el-input v-model="id	" placeholder="输入用户id" class="handle-input mr10"  @keyup.enter.native="getData(1)"></el-input>
+              <el-input v-model="phone" placeholder="输入手机号" class="handle-input mr10"  @keyup.enter.native="getData(1)"></el-input>
               <el-date-picker type="date"  placeholder="开始时间" v-model="start_time" value-format="yyyy-MM-dd"></el-date-picker>
               <el-date-picker type="date"  placeholder="结束时间" v-model="end_time" value-format="yyyy-MM-dd"></el-date-picker>
               <el-button type="primary" icon="search" @click="getData(1)">搜索</el-button>
@@ -225,7 +225,7 @@
                     if (res.msg == "success") {
                        this.$message.success('修改成功');
                        this.editVisible = false;
-                       this.getData();
+                       this.getData(1);
                     } else {
                         this.$message({
                         message: res.msg,
@@ -239,6 +239,7 @@
                this.editVisible = false;
                this.changeVisible = false;
                this.bindVisible = false;
+                this.getData(1);
             },
             handleDelete(index, row) {
                 this.idx = row.id;

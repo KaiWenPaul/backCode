@@ -7,7 +7,7 @@
         </div>
         <div class="container">
             <div class="handle-box">
-                  <!--<el-input v-model="shopId	" placeholder="输入店铺id" class="handle-input mr10"  @keyup.enter.native="getData"></el-input>-->
+                  <!--<el-input v-model="shopId	" placeholder="输入店铺id" class="handle-input mr10"   @keyup.enter.native="getData(1)"></el-input>-->
               <el-input v-model="orderNo" placeholder="订单号" class="handle-input mr10"  @keyup.enter.native="getData(1)"></el-input>
               <el-select v-model="orderStatus" placeholder="请选择客户等级">
                 <el-option

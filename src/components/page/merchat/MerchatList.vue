@@ -7,9 +7,9 @@
         </div>
         <div class="container">
             <div class="handle-box">
-              <el-input v-model="userId	" placeholder="输入用户id" class="handle-input mr10"  @keyup.enter.native="getData"></el-input>
-              <el-input v-model="phone" placeholder="输入电话" class="handle-input mr10"  @keyup.enter.native="getData"></el-input>
-              <el-input v-model="name" placeholder="输入店铺名字" class="handle-input mr10"  @keyup.enter.native="getData"></el-input>
+              <el-input v-model="userId	" placeholder="输入用户id" class="handle-input mr10"   @keyup.enter.native="getData(1)"></el-input>
+              <el-input v-model="phone" placeholder="输入电话" class="handle-input mr10"   @keyup.enter.native="getData(1)"></el-input>
+              <el-input v-model="name" placeholder="输入店铺名字" class="handle-input mr10"   @keyup.enter.native="getData(1)"></el-input>
                <!--<el-date-picker type="date" placeholder="请选择日期" v-model="form.date" value-format="yyyy-MM-dd"></el-date-picker>
               <el-select v-model="select_cate" placeholder="筛选省份" class="handle-select mr10">
                     <el-option key="1" label="广东省" value="广东省"></el-option>
@@ -256,7 +256,7 @@
                     if (res.msg == "success") {
                        this.$message.success('修改成功');
                        this.editVisible = false;
-                       this.getData();
+                       this.getData(1);
                     } else {
                         this.$message({
                         message: res.error,
@@ -270,7 +270,7 @@
                     if (res.msg == "success") {
                        this.$message.success('添加成功');
                        this.editVisible = false;
-                       this.getData();
+                       this.getData(1);
                     } else {
                         this.$message({
                         message: res.error,
@@ -282,6 +282,7 @@
             },
             cancel(){
                this.editVisible = false;
+                this.getData(1);
             },
             handleDelete(index, row) {
                 this.idx = row.id;

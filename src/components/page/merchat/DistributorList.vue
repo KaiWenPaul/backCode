@@ -7,11 +7,11 @@
         </div>
         <div class="container">
             <div class="handle-box">
-              <el-input v-model="userId	" placeholder="输入用户id" class="handle-input mr10"  @keyup.enter.native="getData"></el-input>
-              <el-input v-model="name" placeholder="输入姓名" class="handle-input mr10"  @keyup.enter.native="getData"></el-input>
-              <el-input v-model="corporateName" placeholder="输入公司名称" class="handle-input mr10"  @keyup.enter.native="getData"></el-input>
+              <el-input v-model="userId	" placeholder="输入用户id" class="handle-input mr10"   @keyup.enter.native="getData(1)"></el-input>
+              <el-input v-model="name" placeholder="输入姓名" class="handle-input mr10"   @keyup.enter.native="getData(1)"></el-input>
+              <el-input v-model="corporateName" placeholder="输入公司名称" class="handle-input mr10"   @keyup.enter.native="getData(1)"></el-input>
                <!--<el-date-picker type="date" placeholder="请选择日期" v-model="form.date" value-format="yyyy-MM-dd"></el-date-picker>-->
-              <el-select v-model="check_state" placeholder="审核状态" class="handle-select mr10"  @keyup.enter.native="getData">
+              <el-select v-model="check_state" placeholder="审核状态" class="handle-select mr10"   @keyup.enter.native="getData(1)">
                     <el-option key="1" label="审核中" value="1"></el-option>
                     <el-option key="2" label="审核通过" value="2"></el-option>
                     <el-option key="3" label="审核未通过" value="3"></el-option>

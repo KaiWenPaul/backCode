@@ -222,6 +222,7 @@
             cancel(){
                this.editVisible = false;
                this.pwVisible = false;
+                this.getData();
             },
             handleDelete(index, row) {
                 this.idx = row.id;
