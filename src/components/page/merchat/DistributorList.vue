@@ -154,7 +154,7 @@
                 isAdd:false,
                 maskBtn:false,
                 bigImgSrc:'',
-                imgUrl:imgUrlA+'mnt/disha/vlb-yzb/'
+                imgUrl:imgUrlA+'vlb-yzb/'
             }
         },
         created() {

@@ -28,6 +28,7 @@
                 </el-table-column>
                 <el-table-column prop="account_name" label="昵称" align="center"></el-table-column>
                 <el-table-column prop="phone" label="手机号" align="center"></el-table-column>
+                <el-table-column prop="recommend_code" label="推荐码" align="center"></el-table-column>
                 <el-table-column label="性别" align="center">
                    <template slot-scope="scope">
                     <span v-if="scope.row.sex == '1'">男</span>  
@@ -37,6 +38,7 @@
                   </template>
                 </el-table-column>
                 <el-table-column prop="birthday" label="出生日期" align="center"></el-table-column>
+                <el-table-column prop="workplace " label="工作单位" align="center"></el-table-column>
                 <el-table-column label="地址" align="center"  :show-overflow-tooltip="true">
                    <template slot-scope="scope">
                     <span>{{scope.row.country+scope.row.province+scope.row.city}}</span>

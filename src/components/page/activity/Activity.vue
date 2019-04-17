@@ -416,10 +416,10 @@
                 console.log(item)
                 this.delivery = item.timingTime?true:false;
                 this.idx = item.id;
-                this.moveImage=imgUrl+'mnt/disha/vlb-distributor/'+item.moveImage;
-                this.webImage=imgUrl+'mnt/disha/vlb-distributor/'+item.webImage;
-                this.moveHeadImg=imgUrl+'mnt/disha/vlb-distributor/'+item.headImageMove;
-                this.webHeadImg=imgUrl+'mnt/disha/vlb-distributor/'+item.headImagePc;
+                this.moveImage=imgUrlA+'vlb-distributor/'+item.moveImage;
+                this.webImage=imgUrlA+'vlb-distributor/'+item.webImage;
+                this.moveHeadImg=imgUrlA+'vlb-distributor/'+item.headImageMove;
+                this.webHeadImg=imgUrlA+'vlb-distributor/'+item.headImagePc;
                 this.form = {
                     name: item.name,
                     typeId:item.typeId,

@@ -164,7 +164,7 @@
                 },
                 idx: -1,
                 isAdd:false,
-                imgUrl:imgUrlA+'mnt/disha/vlb-yzb/'
+                imgUrl:imgUrlA+'vlb-yzb/'
             }
         },
         created() {
